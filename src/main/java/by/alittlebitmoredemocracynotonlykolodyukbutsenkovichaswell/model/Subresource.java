@@ -1,4 +1,4 @@
-package by.kolodyuk.model;
+package by.alittlebitmoredemocracynotonlykolodyukbutsenkovichaswell.model;
 
 
 public class Subresource
