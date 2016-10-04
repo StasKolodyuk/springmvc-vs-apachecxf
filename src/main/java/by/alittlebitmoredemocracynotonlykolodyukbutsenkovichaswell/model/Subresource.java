@@ -1,10 +1,9 @@
-package by.kolodyuk.model;
-
+package by.alittlebitmoredemocracynotonlykolodyukbutsenkovichaswell.model;
 
 public class Subresource
 {
-    private String id;
-    private String resourceId;
+    String id;
+    String resourceId;
 
     public String getId()
     {
