@@ -1,4 +1,4 @@
-package by.kolodyuk.model;
+package by.miniq.model;
 
 
 public class Resource

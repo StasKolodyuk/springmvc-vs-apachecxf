@@ -1,4 +1,4 @@
-package by.kolodyuk.controller;
+package by.miniq.controller;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import org.springframework.context.annotation.Bean;
