@@ -3,7 +3,8 @@ package by.alittlebitmoredemocracynotonlykolodyukbutsenkovichaswell.model;
 
 public class Resource
 {
-    public String id;
+    private String id;
+    private String description;
 
     public String getId()
     {
@@ -13,5 +14,13 @@ public class Resource
     public void setId(String id)
     {
         this.id = id;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

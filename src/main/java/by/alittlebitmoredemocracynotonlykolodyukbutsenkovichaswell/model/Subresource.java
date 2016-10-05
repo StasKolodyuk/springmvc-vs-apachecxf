@@ -5,6 +5,7 @@ public class Subresource
 {
     private String id;
     private String resourceId;
+    private String description;
 
     public String getId()
     {
@@ -24,5 +25,13 @@ public class Subresource
     public void setResourceId(String resourceId)
     {
         this.resourceId = resourceId;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

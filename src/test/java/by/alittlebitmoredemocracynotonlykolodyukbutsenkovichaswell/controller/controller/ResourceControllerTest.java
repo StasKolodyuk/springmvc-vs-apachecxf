@@ -1,14 +1,17 @@
 package by.alittlebitmoredemocracynotonlykolodyukbutsenkovichaswell.controller.controller;
 
 import static org.hamcrest.Matchers.samePropertyValuesAs;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import by.alittlebitmoredemocracynotonlykolodyukbutsenkovichaswell.client.rest.ResourceRestClient;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -21,8 +24,12 @@ public class ResourceControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    @MockBean
+    private ResourceRestClient resourceRestClient;
+
     private static final String RESOURCE_API_URL = "/resources";
     private static final String TEST_RESOURCE_ID = "testResource";
+    private static final String RESOURCE_DESCRIPTION = " resource description";
     private static final String URL_SEPARATOR = "/";
 
 
@@ -39,6 +46,8 @@ public class ResourceControllerTest {
     public void resourceHasBeenFound() throws Exception {
         Resource resource = new Resource();
         resource.setId(TEST_RESOURCE_ID);
+        resource.setDescription(TEST_RESOURCE_ID + RESOURCE_DESCRIPTION);
+        when(resourceRestClient.getResourceDescription(TEST_RESOURCE_ID)).thenReturn(TEST_RESOURCE_ID + RESOURCE_DESCRIPTION);
 
         mockMvc.perform(get(RESOURCE_API_URL + URL_SEPARATOR + TEST_RESOURCE_ID))
                 .andExpect(request().asyncStarted())
