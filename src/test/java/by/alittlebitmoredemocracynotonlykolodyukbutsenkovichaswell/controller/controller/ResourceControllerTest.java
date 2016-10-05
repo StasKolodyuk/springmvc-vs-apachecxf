@@ -24,12 +24,8 @@ public class ResourceControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    private ResourceRestClient resourceRestClient;
-
     private static final String RESOURCE_API_URL = "/resources";
     private static final String TEST_RESOURCE_ID = "testResource";
-    private static final String RESOURCE_DESCRIPTION = " resource description";
     private static final String URL_SEPARATOR = "/";
 
 
@@ -46,8 +42,6 @@ public class ResourceControllerTest {
     public void resourceHasBeenFound() throws Exception {
         Resource resource = new Resource();
         resource.setId(TEST_RESOURCE_ID);
-        resource.setDescription(TEST_RESOURCE_ID + RESOURCE_DESCRIPTION);
-        when(resourceRestClient.getResourceDescription(TEST_RESOURCE_ID)).thenReturn(TEST_RESOURCE_ID + RESOURCE_DESCRIPTION);
 
         mockMvc.perform(get(RESOURCE_API_URL + URL_SEPARATOR + TEST_RESOURCE_ID))
                 .andExpect(request().asyncStarted())

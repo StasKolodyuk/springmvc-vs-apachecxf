@@ -24,14 +24,10 @@ public class SubresourceControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
-    private ResourceRestClient resourceRestClient;
-
     private static final String RESOURCE_API_URL = "/resources";
     private static final String SUBRESOURCE_API_URL = "/subresources";
     private static final String TEST_RESOURCE_ID = "testResource";
     private static final String TEST_SUBRESOURCE_ID = "testSubresource";
-    private static final String RESOURCE_DESCRIPTION = " resource description";
     private static final String URL_SEPARATOR = "/";
 
 
@@ -58,8 +54,6 @@ public class SubresourceControllerTest {
         Subresource subresource = new Subresource();
         subresource.setId(TEST_SUBRESOURCE_ID);
         subresource.setResourceId(TEST_RESOURCE_ID);
-        subresource.setDescription(TEST_SUBRESOURCE_ID + RESOURCE_DESCRIPTION);
-        when(resourceRestClient.getResourceDescription(TEST_SUBRESOURCE_ID)).thenReturn(TEST_SUBRESOURCE_ID + RESOURCE_DESCRIPTION);
 
         mockMvc.perform(get(RESOURCE_API_URL + URL_SEPARATOR + TEST_RESOURCE_ID + SUBRESOURCE_API_URL + URL_SEPARATOR + TEST_SUBRESOURCE_ID))
                 .andExpect(request().asyncStarted())

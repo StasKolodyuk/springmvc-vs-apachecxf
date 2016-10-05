@@ -1,11 +1,10 @@
 package by.alittlebitmoredemocracynotonlykolodyukbutsenkovichaswell.client.rest;
 
-import by.alittlebitmoredemocracynotonlykolodyukbutsenkovichaswell.client.rest.model.ResourceResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-@Component
+import by.alittlebitmoredemocracynotonlykolodyukbutsenkovichaswell.client.rest.model.ResourceResponse;
+
 public class ResourceRestClient {
     private RestTemplate restTemplate;
 
