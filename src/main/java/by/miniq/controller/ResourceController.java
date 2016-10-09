@@ -1,6 +1,6 @@
-package by.kolodyuk.controller;
+package by.miniq.controller;
 
-import by.kolodyuk.model.Resource;
+import by.miniq.model.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
