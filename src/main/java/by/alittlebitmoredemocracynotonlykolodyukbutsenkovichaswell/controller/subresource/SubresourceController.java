@@ -22,4 +22,8 @@ public class SubresourceController {
         subresource.setResourceId(resourceId);
         return subresource;
     }
+
+    public void lol() {
+        // sdofsdfopdsfpdfsp
+    }
 }
