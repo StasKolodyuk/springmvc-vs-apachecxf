@@ -24,7 +24,7 @@ public class SubresourceController {
         return subresource;
     }
 
-    public void lalala() {
+    public void lalala(String lalala) {
         // lalalal
     }
 
