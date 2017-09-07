@@ -18,8 +18,6 @@ import by.alittlebitmoredemocracynotonlykolodyukbutsenkovichaswell.model.Resourc
 @Path("/resources")
 @Produces(APPLICATION_JSON)
 public class ResourceController {
-    @Context
-    ResourceContext resourceContext;
 
     @GET
     @Path("/{resourceId}")
