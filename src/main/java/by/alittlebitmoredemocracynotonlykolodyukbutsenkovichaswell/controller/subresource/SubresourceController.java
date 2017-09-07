@@ -24,6 +24,10 @@ public class SubresourceController {
         return subresource;
     }
 
+    public void lalala() {
+        // lalalal
+    }
+
     public void lol() {
         // sdofsdfopdsfpdfsp
     }
